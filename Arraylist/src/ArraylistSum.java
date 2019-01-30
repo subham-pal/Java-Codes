@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Arraylist {
+public class ArraylistSum {
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
