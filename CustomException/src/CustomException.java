@@ -1,12 +1,12 @@
-class ZeroStringLengthExceotion extends Exception{
+class ZeroStringLengthException extends Exception{
 
 }
 
 public class CustomException {
 
-    private static String reverse(String str) throws ZeroStringLengthExceotion{
+    private static String reverse(String str) throws ZeroStringLengthException{
         if(str.length() == 0){
-            throw new ZeroStringLengthExceotion();
+            throw new ZeroStringLengthException();
         }
         String newString = "";
         for(int i = str.length() - 1; i >= 0; --i){
@@ -22,6 +22,7 @@ public class CustomException {
         }
         catch (Exception c){
             System.out.println("Handled");
+            c.printStackTrace();
         }
         finally{
             System.out.println("Main finished");
