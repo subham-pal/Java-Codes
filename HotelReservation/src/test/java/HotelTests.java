@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class HotelTests {
-    private static HotelList myHotels = new HotelList();
-    private static Request r1 = new Request(Day.WEEKDAY, Type.REGULAR);
-    private static Request r2 = new Request(Day.WEEKDAY, Type.REWARD);
-    private static Request r3 = new Request(Day.WEEKEND, Type.REGULAR);
-    private static Request r4 = new Request(Day.WEEKEND, Type.REWARD);
+    private HotelList myHotels = new HotelList();
+    private Request r1 = new Request(Day.WEEKDAY, Type.REGULAR);
+    private Request r2 = new Request(Day.WEEKDAY, Type.REWARD);
+    private Request r3 = new Request(Day.WEEKEND, Type.REGULAR);
+    private Request r4 = new Request(Day.WEEKEND, Type.REWARD);
 
     @BeforeClass
-    public static void setDefaultHotels(){
+    public void setDefaultHotels(){
 
         HashMap<Request, Double> rateMap1 = new HashMap<Request, Double>();
         rateMap1.put(r1, 110D);
