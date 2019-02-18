@@ -1,6 +1,8 @@
-enum Type{
+package com.subham.hotelreservation.models;
+
+public enum Type{
     REGULAR(3), REWARD(4);
-    private int id;
+    int id;
 
     Type(int value){
         id = value;

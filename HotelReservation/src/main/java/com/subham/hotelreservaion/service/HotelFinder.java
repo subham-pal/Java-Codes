@@ -1,3 +1,10 @@
+package com.subham.hotelreservaion.service;
+
+import com.subham.hotelreservation.models.Customer;
+import com.subham.hotelreservation.models.Hotel;
+import com.subham.hotelreservation.models.HotelList;
+import com.subham.hotelreservation.models.Request;
+
 import java.util.*;
 
 class SortArgument {

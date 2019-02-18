@@ -1,3 +1,5 @@
+package com.subham.hotelreservation.models;
+
 import java.util.HashMap;
 
 public class Hotel {

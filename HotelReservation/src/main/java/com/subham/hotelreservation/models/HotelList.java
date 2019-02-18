@@ -1,9 +1,13 @@
+package com.subham.hotelreservation.models;
+
+import com.subham.hotelreservation.models.Hotel;
+
 import java.util.ArrayList;
 
 public class HotelList {
     private ArrayList<Hotel> listOfHotels;
 
-    HotelList(){
+    public HotelList(){
         listOfHotels = new ArrayList<Hotel>();
     }
     public void addHotel(Hotel h){

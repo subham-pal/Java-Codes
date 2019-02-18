@@ -1,6 +1,8 @@
-enum Day{
+package com.subham.hotelreservation.models;
+
+public enum Day{
     WEEKEND(1), WEEKDAY(2);
-    private int id;
+    int id;
 
     Day(int value){
         id = value;

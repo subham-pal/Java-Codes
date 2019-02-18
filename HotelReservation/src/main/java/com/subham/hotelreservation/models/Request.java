@@ -1,4 +1,4 @@
-import com.sun.corba.se.impl.encoding.TypeCodeOutputStream;
+package com.subham.hotelreservation.models;
 
 public class Request {
     private Day day;
