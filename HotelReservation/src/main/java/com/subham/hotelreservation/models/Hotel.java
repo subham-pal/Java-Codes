@@ -5,9 +5,9 @@ import java.util.HashMap;
 public class Hotel {
     private String hotelName;
     private Integer rating;
-    private HashMap<Request, Double> rateCard;
+    private HashMap<Category, Double> rateCard;
 
-    public Hotel(String hotelName, Integer rating, HashMap<Request, Double> rateCard) {
+    public Hotel(String hotelName, Integer rating, HashMap<Category, Double> rateCard) {
         this.hotelName = hotelName;
         this.rating = rating;
         this.rateCard = rateCard;
@@ -17,7 +17,7 @@ public class Hotel {
         return hotelName;
     }
 
-    public HashMap<Request, Double> getRateCard(){
+    public HashMap<Category, Double> getRateCard(){
         return rateCard;
     }
 

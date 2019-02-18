@@ -1,6 +1,6 @@
 package com.subham.hotelreservaion.service;
 
-import com.subham.hotelreservation.models.Customer;
+import com.subham.hotelreservation.models.Category;
 import com.subham.hotelreservation.models.Hotel;
 import com.subham.hotelreservation.models.HotelList;
 import com.subham.hotelreservation.models.Request;
@@ -37,14 +37,14 @@ class Comp implements Comparator<SortArgument>{
 
 public class HotelFinder {
 
-    public Hotel find(HotelList myHotels, Customer c){
+    public Hotel find(HotelList myHotels, Request r){
         ArrayList<SortArgument> list = new ArrayList<SortArgument>();
         for(int i = 0; i < myHotels.size(); ++i){
             double sum = 0;
-            HashMap<Request, Double> rateCard = myHotels.getHotel(i).getRateCard();
-            for(int j = 0; j < c.dayListSize(); ++j){
-                Request r = new Request(c.getDay(j), c.getType());
-                sum += rateCard.get(r);
+            HashMap<Category, Double> rateCard = myHotels.getHotel(i).getRateCard();
+            for(int j = 0; j < r.dayListSize(); ++j){
+                Category c = new Category(r.getDay(j), r.getType());
+                sum += rateCard.get(c);
             }
             list.add(new SortArgument(sum, myHotels.getHotel(i)));
         }

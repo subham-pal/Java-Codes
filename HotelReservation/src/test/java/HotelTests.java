@@ -10,15 +10,15 @@ import java.util.HashMap;
 
 public class HotelTests {
     private static HotelList myHotels = new HotelList();
-    private static Request r1 = new Request(Day.WEEKDAY, Type.REGULAR);
-    private static Request r2 = new Request(Day.WEEKDAY, Type.REWARD);
-    private static Request r3 = new Request(Day.WEEKEND, Type.REGULAR);
-    private static Request r4 = new Request(Day.WEEKEND, Type.REWARD);
+    private static Category r1 = new Category(Day.WEEKDAY, Type.REGULAR);
+    private static Category r2 = new Category(Day.WEEKDAY, Type.REWARD);
+    private static Category r3 = new Category(Day.WEEKEND, Type.REGULAR);
+    private static Category r4 = new Category(Day.WEEKEND, Type.REWARD);
 
     @BeforeClass
     public static void setDefaultHotels(){
 
-        HashMap<Request, Double> rateMap1 = new HashMap<Request, Double>();
+        HashMap<Category, Double> rateMap1 = new HashMap<Category, Double>();
         rateMap1.put(r1, 110D);
         rateMap1.put(r2, 80D);
         rateMap1.put(r3, 90D);
@@ -26,7 +26,7 @@ public class HotelTests {
         Hotel h1 = new Hotel("Lakewood", 2, rateMap1);
         myHotels.addHotel(h1);
 
-        HashMap<Request, Double> rateMap2 = new HashMap<Request, Double>();
+        HashMap<Category, Double> rateMap2 = new HashMap<Category, Double>();
         rateMap2.put(r1, 160D);
         rateMap2.put(r2, 110D);
         rateMap2.put(r3, 60D);
@@ -35,7 +35,7 @@ public class HotelTests {
         Hotel h2 = new Hotel("Bridgewood", 3, rateMap2);
         myHotels.addHotel(h2);
 
-        HashMap<Request, Double> rateMap3 = new HashMap<Request, Double>();
+        HashMap<Category, Double> rateMap3 = new HashMap<Category, Double>();
         rateMap3.put(r1, 220D);
         rateMap3.put(r2, 100D);
         rateMap3.put(r3, 150D);
@@ -49,7 +49,7 @@ public class HotelTests {
         daylist.add(Day.WEEKDAY);
         daylist.add(Day.WEEKDAY);
         daylist.add(Day.WEEKEND);
-        Customer c = new Customer(daylist, Type.REGULAR);
+        Request c = new Request(daylist, Type.REGULAR);
         HotelFinder finder = new HotelFinder();
         Hotel res = finder.find(myHotels, c);
         Assert.assertEquals(res.getHotelName(), "Lakewood");
@@ -61,7 +61,7 @@ public class HotelTests {
         daylist.add(Day.WEEKDAY);
         daylist.add(Day.WEEKDAY);
         daylist.add(Day.WEEKEND);
-        Customer c = new Customer(daylist, Type.REWARD);
+        Request c = new Request(daylist, Type.REWARD);
         HotelFinder finder = new HotelFinder();
         Hotel res = finder.find(myHotels, c);
         Assert.assertEquals(res.getHotelName(), "Ridgewood");
@@ -69,22 +69,22 @@ public class HotelTests {
 
     @Test
     public void hashCodeTestNotEquals1(){
-        Request r1 = new Request(Day.WEEKDAY, Type.REGULAR);
-        Request r2 = new Request(Day.WEEKEND, Type.REGULAR);
+        Category r1 = new Category(Day.WEEKDAY, Type.REGULAR);
+        Category r2 = new Category(Day.WEEKEND, Type.REGULAR);
         Assert.assertNotEquals(r1.hashCode(), r2.hashCode());
     }
 
     @Test
     public void hashCodeTestNotEquals2(){
-        Request r1 = new Request(Day.WEEKDAY, Type.REGULAR);
-        Request r2 = new Request(Day.WEEKDAY, Type.REWARD);
+        Category r1 = new Category(Day.WEEKDAY, Type.REGULAR);
+        Category r2 = new Category(Day.WEEKDAY, Type.REWARD);
         Assert.assertNotEquals(r1.hashCode(), r2.hashCode());
     }
 
     @Test
     public void hashCodeTestEquals1(){
-        Request r1 = new Request(Day.WEEKDAY, Type.REGULAR);
-        Request r2 = new Request(Day.WEEKDAY, Type.REGULAR);
+        Category r1 = new Category(Day.WEEKDAY, Type.REGULAR);
+        Category r2 = new Category(Day.WEEKDAY, Type.REGULAR);
         Assert.assertEquals(r1.hashCode(), r2.hashCode());
     }
 
@@ -95,7 +95,7 @@ public class HotelTests {
 
     @Test
     public void addHotelTest(){
-        HashMap<Request, Double> rateMap4 = new HashMap<Request, Double>();
+        HashMap<Category, Double> rateMap4 = new HashMap<Category, Double>();
         rateMap4.put(r1, 220D);
         rateMap4.put(r2, 100D);
         rateMap4.put(r3, 150D);
@@ -108,7 +108,7 @@ public class HotelTests {
 
     @Test
     public void removeHotelTest(){
-        HashMap<Request, Double> rateMap4 = new HashMap<Request, Double>();
+        HashMap<Category, Double> rateMap4 = new HashMap<Category, Double>();
         rateMap4.put(r1, 220D);
         rateMap4.put(r2, 100D);
         rateMap4.put(r3, 150D);

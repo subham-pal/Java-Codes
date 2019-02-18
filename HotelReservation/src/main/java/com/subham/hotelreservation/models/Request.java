@@ -1,31 +1,25 @@
 package com.subham.hotelreservation.models;
 
-public class Request {
-    private Day day;
-    private Type type;
+import java.util.ArrayList;
 
-    public Request(Day day, Type type) {
-        this.day = day;
+public class Request {
+    ArrayList<Day> dayList;
+    Type type;
+
+    public Request(ArrayList<Day> dayList, Type type) {
+        this.dayList = dayList;
         this.type = type;
     }
 
-    public Day getDay() {
-        return day;
+    public int dayListSize(){
+        return dayList.size();
     }
 
-    public Type getType() {
+    public Day getDay(int index){
+        return dayList.get(index);
+    }
+
+    public Type getType(){
         return type;
-    }
-
-
-    @Override
-    public int hashCode() {
-        System.out.println();
-        return day.getId() * 31 + type.getId() * 31 * 31;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return (((Request)obj).getDay() == day && ((Request)obj).getType() == type);
     }
 }
