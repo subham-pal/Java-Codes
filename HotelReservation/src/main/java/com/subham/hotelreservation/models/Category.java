@@ -2,9 +2,9 @@ package com.subham.hotelreservation.models;
 
 public class Category {
     private Day day;
-    private Type type;
+    private CustomerType type;
 
-    public Category(Day day, Type type) {
+    public Category(Day day, CustomerType type) {
         this.day = day;
         this.type = type;
     }
@@ -13,7 +13,7 @@ public class Category {
         return day;
     }
 
-    public Type getType() {
+    public CustomerType getType() {
         return type;
     }
 

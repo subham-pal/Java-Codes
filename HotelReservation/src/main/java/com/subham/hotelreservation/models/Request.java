@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Request {
     ArrayList<Day> dayList;
-    Type type;
+    CustomerType type;
 
-    public Request(ArrayList<Day> dayList, Type type) {
+    public Request(ArrayList<Day> dayList, CustomerType type) {
         this.dayList = dayList;
         this.type = type;
     }
@@ -19,7 +19,7 @@ public class Request {
         return dayList.get(index);
     }
 
-    public Type getType(){
+    public CustomerType getType(){
         return type;
     }
 }

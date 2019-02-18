@@ -1,10 +1,10 @@
 package com.subham.hotelreservation.models;
 
-public enum Type{
+public enum CustomerType{
     REGULAR(3), REWARD(4);
     int id;
 
-    Type(int value){
+    CustomerType(int value){
         id = value;
     }
 

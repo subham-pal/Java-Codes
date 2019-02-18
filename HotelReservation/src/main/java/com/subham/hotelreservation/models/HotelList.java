@@ -18,7 +18,7 @@ public class HotelList {
         listOfHotels.remove(h);
     }
 
-    public int size(){
+    public int count(){
         return listOfHotels.size();
     }
 
