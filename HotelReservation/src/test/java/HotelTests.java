@@ -1,5 +1,5 @@
 
-import com.subham.hotelreservaion.service.HotelFinder;
+import com.subham.hotelreservation.service.HotelFinder;
 import com.subham.hotelreservation.models.*;
 import org.junit.Assert;
 import org.junit.BeforeClass;
