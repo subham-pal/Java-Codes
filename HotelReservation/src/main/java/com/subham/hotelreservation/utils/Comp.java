@@ -1,12 +1,12 @@
-package com.subham.hotelreservation.service;
+package com.subham.hotelreservation.utils;
 
-import com.subham.hotelreservation.utils.HotelSortArgument;
+import com.subham.hotelreservation.models.Request;
 
 import java.util.Comparator;
 
-class Comp implements Comparator<HotelSortArgument> {
+public class Comp implements Comparator<Request.HotelSortArgument> {
 
-    public int compare(HotelSortArgument hotelSortArgument, HotelSortArgument t1) {
+    public int compare(Request.HotelSortArgument hotelSortArgument, Request.HotelSortArgument t1) {
         if(hotelSortArgument.getAmount() != t1.getAmount()){
             return (int)(hotelSortArgument.getAmount() - t1.getAmount());
         }
