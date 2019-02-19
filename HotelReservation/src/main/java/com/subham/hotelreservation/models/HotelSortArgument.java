@@ -2,15 +2,15 @@ package com.subham.hotelreservation.models;
 
 public class HotelSortArgument {
     private Double amount;
-    private Hotel h;
+    private Hotel hotel;
 
-    public HotelSortArgument(double amount, Hotel h) {
+    public HotelSortArgument(double amount, Hotel hotel) {
         this.amount = amount;
-        this.h = h;
+        this.hotel = hotel;
     }
 
     public Hotel getHotel() {
-        return h;
+        return hotel;
     }
     public double getAmount(){
         return amount;
