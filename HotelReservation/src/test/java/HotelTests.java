@@ -1,6 +1,7 @@
 
 import com.subham.hotelreservation.service.HotelFinder;
 import com.subham.hotelreservation.models.*;
+import com.subham.hotelreservation.utils.Comp;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,28 +19,28 @@ public class HotelTests {
     @BeforeClass
     public static void setDefaultHotels(){
 
-        HashMap<Category, Double> rateMap1 = new HashMap<Category, Double>();
-        rateMap1.put(category1, 110D);
-        rateMap1.put(category2, 80D);
-        rateMap1.put(category3, 90D);
-        rateMap1.put(category4, 80D);
+        HashMap<Category, Integer> rateMap1 = new HashMap<Category, Integer>();
+        rateMap1.put(category1, 110);
+        rateMap1.put(category2, 80);
+        rateMap1.put(category3, 90);
+        rateMap1.put(category4, 80);
         Hotel hotel1 = new Hotel("Lakewood", 2, rateMap1);
         myHotels.addHotel(hotel1);
 
-        HashMap<Category, Double> rateMap2 = new HashMap<Category, Double>();
-        rateMap2.put(category1, 160D);
-        rateMap2.put(category2, 110D);
-        rateMap2.put(category3, 60D);
-        rateMap2.put(category4, 50D);
+        HashMap<Category, Integer> rateMap2 = new HashMap<Category, Integer>();
+        rateMap2.put(category1, 160);
+        rateMap2.put(category2, 110);
+        rateMap2.put(category3, 60);
+        rateMap2.put(category4, 50);
 
         Hotel hotel2 = new Hotel("Bridgewood", 3, rateMap2);
         myHotels.addHotel(hotel2);
 
-        HashMap<Category, Double> rateMap3 = new HashMap<Category, Double>();
-        rateMap3.put(category1, 220D);
-        rateMap3.put(category2, 100D);
-        rateMap3.put(category3, 150D);
-        rateMap3.put(category4, 40D);
+        HashMap<Category, Integer> rateMap3 = new HashMap<Category, Integer>();
+        rateMap3.put(category1, 220);
+        rateMap3.put(category2, 100);
+        rateMap3.put(category3, 150);
+        rateMap3.put(category4, 40);
         Hotel hotel3 = new Hotel("Ridgewood", 4, rateMap3);
         myHotels.addHotel(hotel3);
     }
@@ -52,7 +53,7 @@ public class HotelTests {
         Request request = new Request(daylist, CustomerType.REGULAR);
         HotelFinder finder = new HotelFinder();
         Hotel res = finder.find(myHotels, request);
-        Assert.assertEquals(res.getHotelName(), "Lakewood");
+        Assert.assertEquals("Lakewood", res.getHotelName());
     }
 
     @Test
@@ -64,7 +65,7 @@ public class HotelTests {
         Request request = new Request(daylist, CustomerType.REWARD);
         HotelFinder finder = new HotelFinder();
         Hotel res = finder.find(myHotels, request);
-        Assert.assertEquals(res.getHotelName(), "Ridgewood");
+        Assert.assertEquals("Ridgewood", res.getHotelName());
     }
 
     @Test
@@ -95,11 +96,11 @@ public class HotelTests {
 
     @Test
     public void addHotelTest(){
-        HashMap<Category, Double> rateMap4 = new HashMap<Category, Double>();
-        rateMap4.put(category1, 220D);
-        rateMap4.put(category2, 100D);
-        rateMap4.put(category3, 150D);
-        rateMap4.put(category4, 40D);
+        HashMap<Category, Integer> rateMap4 = new HashMap<Category, Integer>();
+        rateMap4.put(category1, 220);
+        rateMap4.put(category2, 100);
+        rateMap4.put(category3, 150);
+        rateMap4.put(category4, 40);
         Hotel hotel = new Hotel("Palwood", 4, rateMap4);
         myHotels.addHotel(hotel);
         Boolean res = myHotels.contains("Palwood");
@@ -108,15 +109,16 @@ public class HotelTests {
 
     @Test
     public void removeHotelTest(){
-        HashMap<Category, Double> rateMap4 = new HashMap<Category, Double>();
-        rateMap4.put(category1, 220D);
-        rateMap4.put(category2, 100D);
-        rateMap4.put(category3, 150D);
-        rateMap4.put(category4, 40D);
+        HashMap<Category, Integer> rateMap4 = new HashMap<Category, Integer>();
+        rateMap4.put(category1, 220);
+        rateMap4.put(category2, 100);
+        rateMap4.put(category3, 150);
+        rateMap4.put(category4, 40);
         Hotel hotel = new Hotel("Donwood", 4, rateMap4);
         myHotels.addHotel(hotel);
         myHotels.removeHotel(hotel);
         Boolean res = myHotels.contains("Donwood");
         Assert.assertEquals(res, false);
     }
+
 }

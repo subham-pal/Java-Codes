@@ -43,5 +43,4 @@ public class HotelList {
     public Hotel getHotel(int index){
         return listOfHotels.get(index);
     }
-
 }

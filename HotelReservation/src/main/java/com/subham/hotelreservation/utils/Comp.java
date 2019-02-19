@@ -8,9 +8,17 @@ import java.util.Comparator;
 public class Comp implements Comparator<HotelSortArgument> {
 
     public int compare(HotelSortArgument hotelSortArgument, HotelSortArgument t1) {
-        if(hotelSortArgument.getAmount() != t1.getAmount()){
-            return (int)(hotelSortArgument.getAmount() - t1.getAmount());
+        if(hotelSortArgument.getAmount() < t1.getAmount()){
+            return -1;
         }
-        return (t1.getHotel().getRating() - hotelSortArgument.getHotel().getRating());
+        else if(hotelSortArgument.getAmount() > t1.getAmount()){
+            return 1;
+        }
+        else{
+            if(hotelSortArgument.getHotel().getRating() > t1.getHotel().getRating()){
+                return -1;
+            }
+            return 0;
+        }
     }
 }
