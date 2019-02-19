@@ -6,6 +6,5 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum Day{
-    WEEKEND(1), WEEKDAY(2);
-    int id;
+    WEEKEND, WEEKDAY;
 }
