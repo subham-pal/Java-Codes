@@ -14,7 +14,7 @@
   * Junit testing
   
 ## 2. Maths Operation
-  *An object oriented maths operations calculator. It works only for binary operations.
+  * An object oriented maths operations calculator. It works only for binary operations.
  
  
                         
