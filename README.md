@@ -2,6 +2,8 @@
 * Practice codes and assignments for java.
 * Programming is done in Intellij-IDEA IDE.
 * Used Maven Project.
+* Used Lombok plugin.
+* Junit Testing
 
 
 ## 1. Hotel Reservation
@@ -9,9 +11,6 @@
  The features of java used in project are :
   * Comparators
   * Arraylist
-  * `hashCode()` and `equals()` function overriding
-  * Maven project
-  * Junit testing
   
 ## 2. Maths Operation
   * An object oriented maths operations calculator. It works only for binary operations.
