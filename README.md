@@ -11,6 +11,9 @@ Programming is done in Intellij-IDEA IDE.
   3. `hashCode()` and `equals()` function overriding
   4. Maven project
   5. Junit testing
+  
+## Maths Operation
+  An object oriented maths operations calculator. It works only for binary operations.
  
  
                         
